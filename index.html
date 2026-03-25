@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyBroker — Trusted Property Broker Network · Surat</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SVG ICON DEFS (hidden) -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ico-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></symbol>
+  <symbol id="ico-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></symbol>
+  <symbol id="ico-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+  <symbol id="ico-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></symbol>
+  <symbol id="ico-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></symbol>
+  <symbol id="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="ico-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 010-5H6M18 9h1.5a2.5 2.5 0 000-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20 7 22h10c0-2-0.85-3.25-2.03-3.79A1.07 1.07 0 0114 17v-2.34"/><path d="M18 2H6v7a6 6 0 1012 0V2z"/></symbol>
+  <symbol id="ico-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="ico-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></symbol>
+  <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="ico-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="ico-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="ico-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></symbol>
+  <symbol id="ico-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></symbol>
+  <symbol id="ico-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="ico-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="ico-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+  <symbol id="ico-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="ico-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+  <symbol id="ico-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="ico-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="ico-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></symbol>
+</svg>
+
+<!-- TOPBAR -->
+<div id="topbar">
+  <div class="logo" onclick="goHome()"><span class="l1">My</span><span class="l2">Broker</span></div>
+  <nav class="top-nav" id="desktopNav">
+    <span class="top-nav-link" onclick="showPage('landing')">Home</span>
+    <span class="top-nav-link" onclick="requireLogin('listing')">Find Brokers</span>
+    <span class="top-nav-link" onclick="requireLogin('price-guide')">Price Guide</span>
+    <span class="top-nav-link" onclick="scrollToSection('how')">How it Works</span>
+    <span class="top-nav-link" onclick="scrollToSection('faq-section')">FAQ</span>
+  </nav>
+  <div class="top-spacer"></div>
+  <div class="nav-actions" id="navActions"></div>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">☰</button>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu hidden" id="mobileMenu">
+  <span class="top-nav-link" onclick="showPage('landing');closeMobileMenu()">Home</span>
+  <span class="top-nav-link" onclick="requireLogin('listing');closeMobileMenu()">Find Brokers</span>
+  <span class="top-nav-link" onclick="requireLogin('price-guide');closeMobileMenu()">Price Guide</span>
+  <span class="top-nav-link" onclick="scrollToSection('how');closeMobileMenu()">How it Works</span>
+  <span class="top-nav-link" onclick="scrollToSection('faq-section');closeMobileMenu()">FAQ</span>
+  <div class="mobile-menu-auth" id="mobileMenuAuth"></div>
+</div>
+
+<!-- PROFILE DROPDOWN -->
+<div class="profile-dropdown hidden" id="profileDropdown">
+  <div class="pd-user"><div class="pd-av" id="pdAvatar">U</div><div><div class="pd-name" id="pdName">User</div><div class="pd-role" id="pdRole">Member</div></div></div>
+  <div class="pd-divider"></div>
+  <div class="pd-item" onclick="showPage('my-profile');closeDropdown()"><svg class="ico-sm"><use href="#ico-user"/></svg> My Profile</div>
+  <div class="pd-item" onclick="showPage('my-meetings');closeDropdown()"><svg class="ico-sm"><use href="#ico-calendar"/></svg> My Meetings</div>
+  <div class="pd-item" onclick="requireLogin('price-guide');closeDropdown()"><svg class="ico-sm"><use href="#ico-trending"/></svg> Price Guide</div>
+  <div class="pd-divider"></div>
+  <div class="pd-item pd-logout" onclick="doLogout()"><svg class="ico-sm"><use href="#ico-logout"/></svg> Logout</div>
+</div>
+
+<div class="toast" id="toast"></div>
+<button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()"><svg class="ico-sm" style="transform:rotate(-90deg)"><use href="#ico-arrow-right"/></svg></button>
+
+<!-- ░░░░ LANDING ░░░░ -->
+<div class="page active" id="page-landing">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow"><svg class="ico-xs"><use href="#ico-shield"/></svg> Verified Broker Network · Surat</div>
+      <h1 class="anim-up">We personally verify<br>every broker <span class="accent">before</span><br>you meet them.</h1>
+      <p class="hero-sub anim-up d1">No directory. No guesswork. We interview, reference-check, and rank brokers — so you don't have to.</p>
+      <div class="hero-ctas anim-up d2">
+        <button class="btn-hero" onclick="startWizard()"><svg class="ico-sm"><use href="#ico-target"/></svg> Find My Broker</button>
+        <button class="btn-hero-ghost" onclick="scrollToSection('how')">See How It Works</button>
+      </div>
+      <div class="hero-proof anim-up d3">
+        <div class="hp-avatars">
+          <div class="hp-av" style="background:#dce8d8;color:#2d6b3a">R</div>
+          <div class="hp-av" style="background:#d8e0f0;color:#2a4a90;margin-left:-8px">P</div>
+          <div class="hp-av" style="background:#f0dcd8;color:#8a3020;margin-left:-8px">A</div>
+          <div class="hp-av" style="background:#e0d8f0;color:#4a2a90;margin-left:-8px">K</div>
+        </div>
+        <span class="hp-text"><strong>47+ verified brokers</strong> · 1,200+ meetings arranged</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="ts-item anim-fade"><svg class="ts-ico"><use href="#ico-shield"/></svg><div><strong>Identity Verified</strong><span>Aadhaar & PAN checked in person</span></div></div>
+    <div class="ts-item anim-fade"><svg class="ts-ico"><use href="#ico-phone"/></svg><div><strong>References Called</strong><span>We call past clients ourselves</span></div></div>
+    <div class="ts-item anim-fade"><svg class="ts-ico"><use href="#ico-lock"/></svg><div><strong>No Cold Calls</strong><span>Broker contacts after our intro only</span></div></div>
+    <div class="ts-item anim-fade"><svg class="ts-ico"><use href="#ico-trophy"/></svg><div><strong>Trust Scored</strong><span>Ranked by real performance data</span></div></div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section-white" id="how">
+    <div class="container">
+      <div class="sec-label anim-fade">THE PROCESS</div>
+      <h2 class="sec-title anim-fade">How MyBroker Works</h2>
+      <p class="sec-desc anim-fade">No spam. No cold calls. Just the right broker, matched to your need.</p>
+      <div class="steps-grid">
+        <div class="step-card anim-up">
+          <div class="step-num">01</div>
+          <div class="step-ico-wrap"><svg class="step-ico"><use href="#ico-user"/></svg></div>
+          <h3>Register Free</h3>
+          <p>Quick OTP sign-up in 30 seconds. No payment needed for buyers.</p>
+        </div>
+        <div class="step-card anim-up d1">
+          <div class="step-num">02</div>
+          <div class="step-ico-wrap"><svg class="step-ico"><use href="#ico-target"/></svg></div>
+          <h3>Tell Us Your Need</h3>
+          <p>Our Smart Match wizard understands your exact area, budget, and timeline.</p>
+        </div>
+        <div class="step-card anim-up d2">
+          <div class="step-num">03</div>
+          <div class="step-ico-wrap"><svg class="step-ico"><use href="#ico-shield"/></svg></div>
+          <h3>Get Matched Brokers</h3>
+          <p>We show you trust-scored, verified brokers who specialize in your need.</p>
+        </div>
+        <div class="step-card anim-up d3">
+          <div class="step-num">04</div>
+          <div class="step-ico-wrap"><svg class="step-ico"><use href="#ico-calendar"/></svg></div>
+          <h3>We Arrange Meeting</h3>
+          <p>MyBroker personally schedules your consultation. Just show up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="section-gray" id="testimonials">
+    <div class="container">
+      <div class="sec-label anim-fade">REAL STORIES</div>
+      <h2 class="sec-title anim-fade">What Our Users Say</h2>
+      <div class="testimonial-grid">
+        <div class="testi-card anim-up">
+          <div class="testi-stars"><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg></div>
+          <p class="testi-text">"Found our dream 3BHK in Vesu in just 12 days. Rajesh bhai was incredibly transparent about pricing. MyBroker's verification gave us confidence we never had with random brokers."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#dce8d8;color:#2d6b3a">MD</div>
+            <div><strong>Mihir & Darshana Desai</strong><span>Bought 3BHK in Vesu · Jan 2025</span></div>
+          </div>
+        </div>
+        <div class="testi-card anim-up d1">
+          <div class="testi-stars"><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg></div>
+          <p class="testi-text">"As a first-time buyer, I was terrified of getting cheated. MyBroker matched me with Kavita who explained every document patiently. Bought my first flat in Adajan with zero stress."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#e0d8f0;color:#4a2a90">SP</div>
+            <div><strong>Sonal Patel</strong><span>First-time buyer · Adajan · Dec 2024</span></div>
+          </div>
+        </div>
+        <div class="testi-card anim-up d2">
+          <div class="testi-stars"><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg><svg class="ico-xs gold"><use href="#ico-star"/></svg></div>
+          <p class="testi-text">"Needed a commercial space in Katargam for my textile business. Suresh bhai found the perfect shop in 3 visits. The trust score system made choosing easy — I knew exactly who to trust."</p>
+          <div class="testi-author">
+            <div class="testi-av" style="background:#f0ead8;color:#7a5a10">MA</div>
+            <div><strong>Manish Agarwal</strong><span>Commercial · Katargam · Jan 2025</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS STORIES -->
+  <div class="section-white">
+    <div class="container">
+      <div class="sec-label anim-fade">SUCCESS METRICS</div>
+      <h2 class="sec-title anim-fade">Results That Matter</h2>
+      <div class="success-grid">
+        <div class="success-card anim-up"><div class="sc-num" data-count="47">0</div><div class="sc-label">Verified Brokers</div><div class="sc-desc">Each personally interviewed & reference-checked</div></div>
+        <div class="success-card anim-up d1"><div class="sc-num" data-count="1200">0</div><div class="sc-label">Meetings Arranged</div><div class="sc-desc">No-pressure consultations, arranged by us</div></div>
+        <div class="success-card anim-up d2"><div class="sc-num accent-num" data-count="94">0</div><div class="sc-label">Satisfaction Rate</div><div class="sc-desc">Users who would recommend MyBroker</div></div>
+        <div class="success-card anim-up d3"><div class="sc-num" data-count="12">0</div><div class="sc-label">Avg Days to Deal</div><div class="sc-desc">From first meeting to finalizing property</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-gray" id="faq-section">
+    <div class="container">
+      <div class="sec-label anim-fade">GOT QUESTIONS?</div>
+      <h2 class="sec-title anim-fade">Frequently Asked Questions</h2>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item anim-up"><div class="faq-q" onclick="toggleFaq(this)"><span>Is MyBroker free for property buyers?</span><svg class="faq-chevron"><use href="#ico-arrow-right"/></svg></div><div class="faq-a">Yes, 100% free. Buyers never pay anything. We earn from broker subscriptions. You search, compare, and meet brokers at zero cost — forever.</div></div>
+        <div class="faq-item anim-up"><div class="faq-q" onclick="toggleFaq(this)"><span>How are brokers verified?</span><svg class="faq-chevron"><use href="#ico-arrow-right"/></svg></div><div class="faq-a">Every broker goes through 3-step verification: (1) Identity check — Aadhaar & PAN verified in person, (2) Reference check — we call 3-5 past clients, (3) Experience audit — deal history verified. Only those who pass all three get listed.</div></div>
+        <div class="faq-item anim-up"><div class="faq-q" onclick="toggleFaq(this)"><span>What is the Trust Score?</span><svg class="faq-chevron"><use href="#ico-arrow-right"/></svg></div><div class="faq-a">Trust Score is our proprietary rating (0-100) calculated from: verification status (10%), years of experience (25%), deals completed (20%), client ratings (30%), and review count (15%). It updates monthly based on real performance data.</div></div>
+        <div class="faq-item anim-up"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I meet multiple brokers?</span><svg class="faq-chevron"><use href="#ico-arrow-right"/></svg></div><div class="faq-a">Absolutely! We encourage meeting 2-3 brokers before deciding. Each meeting is a no-obligation consultation arranged by us.</div></div>
+        <div class="faq-item anim-up"><div class="faq-q" onclick="toggleFaq(this)"><span>How does MyBroker make money?</span><svg class="faq-chevron"><use href="#ico-arrow-right"/></svg></div><div class="faq-a">Brokers pay a monthly or yearly subscription to be listed. Premium plans offer more visibility and leads. Buyers never pay — our revenue is 100% from broker subscriptions.</div></div>
+        <div class="faq-item anim-up"><div class="faq-q" onclick="toggleFaq(this)"><span>Is my information safe?</span><svg class="faq-chevron"><use href="#ico-arrow-right"/></svg></div><div class="faq-a">Your phone number is never shared with brokers until you request a meeting. Even then, we make the introduction call first. No broker can see your details directly.</div></div>
+        <div class="faq-item anim-up"><div class="faq-q" onclick="toggleFaq(this)"><span>Which areas in Surat are covered?</span><svg class="faq-chevron"><use href="#ico-arrow-right"/></svg></div><div class="faq-a">We currently cover 9 major areas: Vesu, Adajan, Pal, Althan, City Light, Athwa, Piplod, Dumas, and Katargam — expanding monthly.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container" style="text-align:center">
+      <h2 class="anim-up" style="color:#fff;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;margin-bottom:0.5rem">Ready to find your trusted broker?</h2>
+      <p class="anim-up d1" style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem;font-size:0.9rem">Takes 30 seconds. Free forever for buyers.</p>
+      <button class="btn-hero anim-up d2" onclick="startWizard()"><svg class="ico-sm"><use href="#ico-zap"/></svg> Start Smart Match</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div><div class="footer-brand-logo"><span class="l1">My</span><span class="l2">Broker</span></div><p class="footer-brand-p">A verified broker matchmaking platform. We meet every broker personally before they join.</p></div>
+        <div class="footer-col"><h4>For Buyers</h4><a onclick="showPage('auth','register')">Register Free</a><a onclick="startWizard()">Smart Match</a><a onclick="requireLogin('listing')">Browse Brokers</a><a onclick="requireLogin('price-guide')">Price Guide</a></div>
+        <div class="footer-col"><h4>For Brokers</h4><a onclick="switchTab('broker-register');showPage('auth')">Join MyBroker</a><a onclick="requireLogin('broker-dash')">Broker Dashboard</a></div>
+        <div class="footer-col"><h4>Company</h4><a>About Us</a><a>Contact</a><a>Privacy Policy</a></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 MyBroker · Trusted Property Broker Network</p><p>Free for buyers · Made in Surat</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░░░ AUTH ░░░░ -->
+<div class="page" id="page-auth">
+  <div class="auth-page">
+    <div class="auth-left">
+      <div class="auth-left-inner">
+        <div class="auth-left-logo"><span class="l1">My</span><span class="l2">Broker</span></div>
+        <h2>We verify brokers.<br>You <span>pick the best.</span></h2>
+        <p>Every broker is personally interviewed, reference-checked, and trust-scored before they can join MyBroker.</p>
+        <div class="auth-trust-list">
+          <div class="atl-row"><div class="atl-dot"><svg class="ico-sm" style="color:var(--red)"><use href="#ico-shield"/></svg></div><div class="atl-txt"><strong>Identity Verified</strong> — Aadhaar & PAN checked</div></div>
+          <div class="atl-row"><div class="atl-dot"><svg class="ico-sm" style="color:var(--red)"><use href="#ico-phone"/></svg></div><div class="atl-txt"><strong>References Called</strong> — Past clients contacted</div></div>
+          <div class="atl-row"><div class="atl-dot"><svg class="ico-sm" style="color:var(--red)"><use href="#ico-trophy"/></svg></div><div class="atl-txt"><strong>Trust Scored</strong> — Performance ranked 0-100</div></div>
+          <div class="atl-row"><div class="atl-dot"><svg class="ico-sm" style="color:var(--red)"><use href="#ico-lock"/></svg></div><div class="atl-txt"><strong>Free for Buyers</strong> — No hidden charges</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-box">
+        <div class="auth-box-title" id="authTitle">Welcome Back</div>
+        <div class="auth-box-sub" id="authSub">Login to access verified broker profiles</div>
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Login</button>
+          <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Register</button>
+          <button class="auth-tab" id="tab-broker-register" onclick="switchTab('broker-register')">Broker</button>
+        </div>
+        <div id="auth-msg"></div>
+
+        <!-- OTP LOGIN -->
+        <div id="form-login">
+          <div class="ff"><label>Mobile Number</label><input type="tel" id="login-mobile" placeholder="Enter 10-digit mobile" maxlength="10"></div>
+          <div id="otp-section" class="hidden">
+            <div class="ff"><label>Enter OTP</label>
+              <div class="otp-row">
+                <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,0)" onkeydown="otpBack(event,0)">
+                <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,1)" onkeydown="otpBack(event,1)">
+                <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,2)" onkeydown="otpBack(event,2)">
+                <input type="text" class="otp-input" maxlength="1" oninput="otpNext(this,3)" onkeydown="otpBack(event,3)">
+              </div>
+              <div class="otp-timer" id="otpTimer"></div>
+            </div>
+            <button class="auth-submit" onclick="verifyOtp()">Verify & Login →</button>
+          </div>
+          <div id="send-otp-section">
+            <button class="auth-submit" onclick="sendOtp()">Send OTP →</button>
+          </div>
+          <p class="auth-note" style="margin-top:1rem">New user? <span onclick="switchTab('register')">Register free</span></p>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="form-register" class="hidden">
+          <div class="form-row"><div class="ff"><label>Full Name *</label><input type="text" id="reg-name" placeholder="Your name"></div><div class="ff"><label>Mobile *</label><input type="tel" id="reg-mobile" placeholder="10-digit mobile" maxlength="10"></div></div>
+          <div class="ff"><label>Email (optional)</label><input type="email" id="reg-email" placeholder="your@email.com"></div>
+          <div class="ff"><label>I am looking to</label><select id="reg-intent"><option value="Buy">Buy Property</option><option value="Rent">Rent Property</option><option value="Commercial">Commercial</option></select></div>
+          <div id="reg-otp-section" class="hidden">
+            <div class="ff"><label>Enter OTP sent to your mobile</label>
+              <div class="otp-row">
+                <input type="text" class="otp-input reg-otp" maxlength="1" oninput="otpNext(this,0,'reg')" onkeydown="otpBack(event,0,'reg')">
+                <input type="text" class="otp-input reg-otp" maxlength="1" oninput="otpNext(this,1,'reg')" onkeydown="otpBack(event,1,'reg')">
+                <input type="text" class="otp-input reg-otp" maxlength="1" oninput="otpNext(this,2,'reg')" onkeydown="otpBack(event,2,'reg')">
+                <input type="text" class="otp-input reg-otp" maxlength="1" oninput="otpNext(this,3,'reg')" onkeydown="otpBack(event,3,'reg')">
+              </div>
+            </div>
+            <button class="auth-submit" onclick="verifyRegOtp()">Verify & Create Account →</button>
+          </div>
+          <div id="reg-send-section"><button class="auth-submit" onclick="sendRegOtp()">Send OTP & Register →</button></div>
+          <p class="auth-note">Already registered? <span onclick="switchTab('login')">Login here</span></p>
+        </div>
+
+        <!-- BROKER REGISTER -->
+        <div id="form-broker-register" class="hidden">
+          <div class="form-row"><div class="ff"><label>Full Name *</label><input type="text" id="breg-name" placeholder="Your name"></div><div class="ff"><label>Mobile *</label><input type="tel" id="breg-mobile" placeholder="10-digit mobile" maxlength="10"></div></div>
+          <div class="ff"><label>Email *</label><input type="email" id="breg-email" placeholder="your@email.com"></div>
+          <div class="form-row"><div class="ff"><label>Years of Exp</label><input type="number" id="breg-exp" placeholder="e.g. 5" min="0"></div><div class="ff"><label>Areas *</label><input type="text" id="breg-areas" placeholder="Vesu, Adajan, Pal"></div></div>
+          <button class="auth-submit" onclick="doBrokerRegister()">Submit Application →</button>
+          <p class="auth-note">Already registered? <span onclick="switchTab('login')">Login here</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░░░ SMART MATCH WIZARD ░░░░ -->
+<div class="page" id="page-wizard">
+  <div class="wizard-wrap">
+    <div class="wizard-progress"><div class="wizard-bar" id="wizardBar"></div></div>
+    <div class="wizard-card">
+      <!-- Step 1 -->
+      <div class="wiz-step active" id="wiz-1">
+        <div class="wiz-step-label">Step 1 of 3</div>
+        <h2>What are you looking for?</h2>
+        <p>Select your primary requirement</p>
+        <div class="wiz-options">
+          <div class="wiz-opt" onclick="selectWizOpt(this,'intent','Buy')"><svg class="wiz-opt-ico"><use href="#ico-home"/></svg><strong>Buy Property</strong><span>Flat, Villa, Plot</span></div>
+          <div class="wiz-opt" onclick="selectWizOpt(this,'intent','Rent')"><svg class="wiz-opt-ico"><use href="#ico-calendar"/></svg><strong>Rent Property</strong><span>Residential rental</span></div>
+          <div class="wiz-opt" onclick="selectWizOpt(this,'intent','Commercial')"><svg class="wiz-opt-ico"><use href="#ico-trending"/></svg><strong>Commercial</strong><span>Shop, Office, Warehouse</span></div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="wiz-step" id="wiz-2">
+        <div class="wiz-step-label">Step 2 of 3</div>
+        <h2>Where & What?</h2>
+        <p>Help us narrow down the perfect broker</p>
+        <div class="wiz-form">
+          <div class="ff"><label>Preferred Area *</label><select id="wiz-area"><option value="">Select area</option><option>Vesu</option><option>Adajan</option><option>Pal</option><option>Althan</option><option>City Light</option><option>Athwa</option><option>Piplod</option><option>Dumas</option><option>Katargam</option></select></div>
+          <div class="ff"><label>Property Type</label><select id="wiz-type"><option value="">Any type</option><option>Residential Flat</option><option>Villa / Bungalow</option><option>Plot / Land</option><option>Commercial</option><option>Rental</option></select></div>
+          <div class="ff"><label>Budget Range</label><select id="wiz-budget"><option value="">Any budget</option><option>Below ₹30L</option><option>₹30L – ₹60L</option><option>₹60L – ₹1Cr</option><option>₹1Cr – ₹2Cr</option><option>₹2Cr+</option></select></div>
+        </div>
+        <div class="wiz-nav"><button class="wiz-back" onclick="wizBack()">← Back</button><button class="wiz-next" onclick="wizNext2()">Next →</button></div>
+      </div>
+      <!-- Step 3 -->
+      <div class="wiz-step" id="wiz-3">
+        <div class="wiz-step-label">Step 3 of 3</div>
+        <h2>Almost done!</h2>
+        <p>A few more details for the best match</p>
+        <div class="wiz-form">
+          <div class="ff"><label>Timeline</label><select id="wiz-timeline"><option>Within 1 month</option><option>1-3 months</option><option>3-6 months</option><option>Just exploring</option></select></div>
+          <div class="ff"><label>Any specific requirement? (optional)</label><input type="text" id="wiz-note" placeholder="e.g. 3BHK near school, ground floor only"></div>
+        </div>
+        <div class="wiz-nav"><button class="wiz-back" onclick="wizBack()">← Back</button><button class="wiz-next" onclick="wizFinish()"><svg class="ico-sm"><use href="#ico-search"/></svg> Find My Brokers</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░░░ LISTING ░░░░ -->
+<div class="page" id="page-listing">
+  <div class="listing-wrap">
+    <div class="listing-top-bar">
+      <div><div class="listing-title" id="listing-title">Verified Brokers in Surat</div><div class="listing-sub" id="listing-sub">Browse trust-scored brokers</div></div>
+      <div class="listing-top-actions">
+        <div class="sort-row"><span class="sort-label">Sort:</span><select class="sort-select" id="f-sort" onchange="renderBrokers()"><option value="trust">Trust Score</option><option value="rating">Rating</option><option value="exp">Experience</option><option value="deals">Deals</option></select></div>
+        <button class="mobile-filter-btn" onclick="toggleMobileFilter()"><svg class="ico-xs"><use href="#ico-settings"/></svg> Filters</button>
+      </div>
+    </div>
+
+    <!-- Match banner -->
+    <div class="match-banner hidden" id="matchBanner">
+      <div class="mb-left"><svg class="ico-md" style="color:var(--red)"><use href="#ico-target"/></svg><div><strong id="mb-title">Matched for you</strong><span id="mb-desc">Showing brokers matching your requirements</span></div></div>
+      <button class="mb-clear" onclick="clearMatch()"><svg class="ico-xs"><use href="#ico-arrow-right"/></svg> Show all brokers</button>
+    </div>
+
+    <!-- Recently viewed -->
+    <div class="recent-section hidden" id="recentSection">
+      <div class="recent-header"><span class="recent-title"><svg class="ico-xs"><use href="#ico-clock"/></svg> Recently Viewed</span><span class="recent-clear" onclick="clearRecent()">Clear</span></div>
+      <div class="recent-scroll" id="recentScroll"></div>
+    </div>
+
+    <div class="listing-layout">
+      <div class="filter-box" id="filterBox">
+        <div class="fb-head"><span class="fb-title">Filters</span><span class="fb-clear" onclick="clearFilters()">Clear All</span></div>
+        <div class="fb-sec"><div class="fb-label">Area</div><select class="fb-select" id="f-area" onchange="renderBrokers()"><option value="">All Areas</option><option>Vesu</option><option>Adajan</option><option>Pal</option><option>Althan</option><option>City Light</option><option>Athwa</option><option>Piplod</option><option>Dumas</option><option>Katargam</option></select></div>
+        <div class="fb-sec"><div class="fb-label">Property Type</div><div class="chips" id="chips-type"><span class="chip" onclick="toggleChip(this,'type')">Flat</span><span class="chip" onclick="toggleChip(this,'type')">Villa</span><span class="chip" onclick="toggleChip(this,'type')">Plot</span><span class="chip" onclick="toggleChip(this,'type')">Commercial</span><span class="chip" onclick="toggleChip(this,'type')">Rental</span></div></div>
+        <div class="fb-sec"><div class="fb-label">Budget</div><select class="fb-select" id="f-budget" onchange="renderBrokers()"><option value="">Any Budget</option><option>Below ₹30L</option><option>₹30L – ₹60L</option><option>₹60L – ₹1Cr</option><option>₹1Cr – ₹2Cr</option><option>₹2Cr+</option></select></div>
+        <div class="fb-sec"><div class="fb-label">Min Trust Score</div><div class="chips" id="chips-trust"><span class="chip" onclick="toggleChip(this,'trust')">70+</span><span class="chip" onclick="toggleChip(this,'trust')">80+</span><span class="chip" onclick="toggleChip(this,'trust')">90+</span></div></div>
+        <div class="fb-sec"><div class="fb-label">Experience</div><div class="chips" id="chips-exp"><span class="chip" onclick="toggleChip(this,'exp')">5+</span><span class="chip" onclick="toggleChip(this,'exp')">10+</span></div></div>
+        <button class="apply-filters" onclick="renderBrokers();closeMobileFilter()">Apply Filters</button>
+      </div>
+      <div class="broker-list" id="brokerList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░░░ PROFILE ░░░░ -->
+<div class="page" id="page-profile"><div class="profile-wrap"><div class="back-btn" onclick="showPage('listing')">← Back to all brokers</div><div id="profileContent"></div></div></div>
+
+<!-- ░░░░ MY PROFILE ░░░░ -->
+<div class="page" id="page-my-profile">
+  <div class="myprofile-wrap">
+    <div class="back-btn" onclick="goHome()">← Back</div>
+    <div class="myprofile-header"><div class="myprofile-av" id="mp-avatar">U</div><div><div class="myprofile-name" id="mp-name">User</div><div class="myprofile-role" id="mp-role-badge">Member</div></div></div>
+    <div class="myprofile-grid">
+      <div>
+        <div class="pcard"><div class="pcard-title">Edit Profile</div><div id="profile-edit-msg"></div><div class="ff"><label>Full Name</label><input type="text" id="edit-name"></div><div class="ff"><label>Email</label><input type="email" id="edit-email"></div><div class="ff"><label>Mobile</label><input type="tel" id="edit-mobile" disabled style="background:var(--surface);color:var(--muted)"></div><div class="ff"><label>Looking to</label><select id="edit-intent"><option value="Buy">Buy</option><option value="Rent">Rent</option><option value="Commercial">Commercial</option><option value="Sell">Sell</option></select></div><button class="auth-submit" onclick="saveProfile()" style="margin-top:.5rem">Save Changes →</button></div>
+      </div>
+      <div>
+        <div class="pcard"><div class="pcard-title">Account Info</div><div class="account-info-row"><span>Mobile</span><strong id="ai-mobile">—</strong></div><div class="account-info-row"><span>Email</span><strong id="ai-email">—</strong></div><div class="account-info-row"><span>Since</span><strong id="ai-since">—</strong></div><div class="account-info-row"><span>Type</span><strong id="ai-role">—</strong></div></div>
+        <div class="pcard"><div class="pcard-title">Saved Brokers</div><div id="saved-brokers-list"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░░░ MY MEETINGS ░░░░ -->
+<div class="page" id="page-my-meetings">
+  <div class="listing-wrap"><div class="back-btn" onclick="goHome()">← Back</div><div class="listing-top-bar"><div><div class="listing-title">My Meeting Requests</div><div class="listing-sub">Track all your broker consultations</div></div></div><div id="myMeetingsList"></div></div>
+</div>
+
+<!-- ░░░░ PRICE GUIDE ░░░░ -->
+<div class="page" id="page-price-guide">
+  <div class="listing-wrap">
+    <div class="listing-top-bar"><div><div class="listing-title">Property Price Guide</div><div class="listing-sub">Average ₹/sqft across Surat · Updated Jan 2025</div></div></div>
+    <div class="tab-bar"><button class="tb on" onclick="switchPriceTab('res',this)">Residential</button><button class="tb" onclick="switchPriceTab('com',this)">Commercial</button><button class="tb" onclick="switchPriceTab('plot',this)">Plot</button></div>
+    <div class="tb-panel on" id="ptab-res"><div id="pgrid-res" class="price-grid"></div></div>
+    <div class="tb-panel" id="ptab-com"><div id="pgrid-com" class="price-grid"></div></div>
+    <div class="tb-panel" id="ptab-plot"><div id="pgrid-plot" class="price-grid"></div></div>
+  </div>
+</div>
+
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
