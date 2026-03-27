@@ -65,8 +65,9 @@
 <div class="profile-dropdown hidden" id="profileDropdown">
   <div class="pd-user"><div class="pd-av" id="pdAvatar">U</div><div><div class="pd-name" id="pdName">User</div><div class="pd-role" id="pdRole">Member</div></div></div>
   <div class="pd-divider"></div>
-  <div class="pd-item" onclick="showPage('my-profile');closeDropdown()"><svg class="ico-sm"><use href="#ico-user"/></svg> My Profile</div>
-  <div class="pd-item" onclick="showPage('my-meetings');closeDropdown()"><svg class="ico-sm"><use href="#ico-calendar"/></svg> My Meetings</div>
+  <div class="pd-item" id="pdBrokerItem" style="display:none" onclick="showPage('broker-dash');closeDropdown()"><svg class="ico-sm"><use href="#ico-settings"/></svg> Broker Dashboard</div>
+  <div class="pd-item" id="pdProfileItem" onclick="showPage('my-profile');closeDropdown()"><svg class="ico-sm"><use href="#ico-user"/></svg> My Profile</div>
+  <div class="pd-item" id="pdMeetingsItem" onclick="showPage('my-meetings');closeDropdown()"><svg class="ico-sm"><use href="#ico-calendar"/></svg> My Meetings</div>
   <div class="pd-item" onclick="requireLogin('price-guide');closeDropdown()"><svg class="ico-sm"><use href="#ico-trending"/></svg> Price Guide</div>
   <div class="pd-divider"></div>
   <div class="pd-item pd-logout" onclick="doLogout()"><svg class="ico-sm"><use href="#ico-logout"/></svg> Logout</div>
@@ -302,8 +303,19 @@
         <div id="form-broker-register" class="hidden">
           <div class="form-row"><div class="ff"><label>Full Name *</label><input type="text" id="breg-name" placeholder="Your name"></div><div class="ff"><label>Mobile *</label><input type="tel" id="breg-mobile" placeholder="10-digit mobile" maxlength="10"></div></div>
           <div class="ff"><label>Email *</label><input type="email" id="breg-email" placeholder="your@email.com"></div>
-          <div class="form-row"><div class="ff"><label>Years of Exp</label><input type="number" id="breg-exp" placeholder="e.g. 5" min="0"></div><div class="ff"><label>Areas *</label><input type="text" id="breg-areas" placeholder="Vesu, Adajan, Pal"></div></div>
-          <button class="auth-submit" onclick="doBrokerRegister()">Submit Application →</button>
+          <div class="form-row"><div class="ff"><label>Years of Experience</label><input type="number" id="breg-exp" placeholder="e.g. 5" min="0"></div><div class="ff"><label>Areas (comma separated)</label><input type="text" id="breg-areas" placeholder="Vesu, Adajan, Pal"></div></div>
+          <div id="breg-otp-section" class="hidden">
+            <div class="ff"><label>Enter OTP sent to your mobile</label>
+              <div class="otp-row">
+                <input type="text" class="otp-input breg-otp" maxlength="1" oninput="otpNext(this,0,'breg')" onkeydown="otpBack(event,0,'breg')">
+                <input type="text" class="otp-input breg-otp" maxlength="1" oninput="otpNext(this,1,'breg')" onkeydown="otpBack(event,1,'breg')">
+                <input type="text" class="otp-input breg-otp" maxlength="1" oninput="otpNext(this,2,'breg')" onkeydown="otpBack(event,2,'breg')">
+                <input type="text" class="otp-input breg-otp" maxlength="1" oninput="otpNext(this,3,'breg')" onkeydown="otpBack(event,3,'breg')">
+              </div>
+            </div>
+            <button class="auth-submit" onclick="verifyBregOtp()">Verify & Join as Broker →</button>
+          </div>
+          <div id="breg-send-section"><button class="auth-submit" onclick="sendBregOtp()">Send OTP & Register →</button></div>
           <p class="auth-note">Already registered? <span onclick="switchTab('login')">Login here</span></p>
         </div>
       </div>
@@ -415,6 +427,68 @@
 <!-- ░░░░ MY MEETINGS ░░░░ -->
 <div class="page" id="page-my-meetings">
   <div class="listing-wrap"><div class="back-btn" onclick="goHome()">← Back</div><div class="listing-top-bar"><div><div class="listing-title">My Meeting Requests</div><div class="listing-sub">Track all your broker consultations</div></div></div><div id="myMeetingsList"></div></div>
+</div>
+
+<!-- ░░░░ BROKER DASHBOARD ░░░░ -->
+<div class="page" id="page-broker-dash">
+  <div class="myprofile-wrap">
+    <div class="myprofile-header">
+      <div class="myprofile-av bd-broker-av" id="bd-avatar">B</div>
+      <div style="flex:1">
+        <div class="myprofile-name" id="bd-name">Broker Name</div>
+        <div id="bd-title" style="color:rgba(255,255,255,0.6);font-size:0.82rem;margin-bottom:0.4rem">Property Consultant</div>
+        <div style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap">
+          <span id="bd-verified" class="profile-verified"><svg class="ico-xs"><use href="#ico-check"/></svg> Identity Verified</span>
+          <span style="font-size:0.82rem;color:rgba(255,255,255,0.7)">Trust Score: <strong id="bd-trust-score" style="font-size:1rem">—</strong> <span id="bd-trust-label" style="font-size:0.72rem"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-bar" style="background:#fff;border-radius:8px 8px 0 0;padding:0 1rem;margin-bottom:0">
+      <button class="tb-tab on" onclick="switchBrokerTab('edit',this)">Edit Profile</button>
+      <button class="tb-tab" onclick="switchBrokerTab('meetings',this);loadBrokerMeetings(getBrokerProfile())">Meeting Requests</button>
+    </div>
+
+    <!-- Edit Profile Tab -->
+    <div class="tb-panel on" id="bdtab-edit">
+      <div class="myprofile-grid" style="margin-top:0">
+        <div>
+          <div class="pcard">
+            <div class="pcard-title">Profile Information</div>
+            <div id="bd-edit-msg"></div>
+            <div class="ff"><label>Full Name *</label><input type="text" id="bdf-name" placeholder="Your full name"></div>
+            <div class="ff"><label>Professional Title</label><input type="text" id="bdf-title" placeholder="e.g. Senior Property Consultant"></div>
+            <div class="form-row">
+              <div class="ff"><label>Years of Experience</label><input type="number" id="bdf-exp" placeholder="e.g. 8" min="0"></div>
+              <div class="ff"><label>Response Time</label><input type="text" id="bdf-response" placeholder="e.g. ~1 hr"></div>
+            </div>
+            <div class="ff"><label>Languages Spoken</label><input type="text" id="bdf-lang" placeholder="e.g. Gujarati, Hindi, English"></div>
+            <div class="ff"><label>About You</label><textarea id="bdf-about" placeholder="Write a short bio — what you specialise in, your approach, why clients choose you..." style="resize:vertical;min-height:90px;padding:0.58rem 0.75rem;border:1.5px solid var(--border);border-radius:7px;font-family:'Sora',sans-serif;font-size:0.82rem;outline:none;width:100%"></textarea></div>
+            <button class="auth-submit" onclick="saveBrokerProfile()" style="margin-top:0.5rem">Save Profile →</button>
+          </div>
+        </div>
+        <div>
+          <div class="pcard">
+            <div class="pcard-title">Service Areas</div>
+            <div id="bdf-areas" class="bd-checkbox-grid"></div>
+          </div>
+          <div class="pcard">
+            <div class="pcard-title">Property Types</div>
+            <div id="bdf-types" class="bd-checkbox-grid"></div>
+          </div>
+          <div class="pcard">
+            <div class="pcard-title">Budget Ranges</div>
+            <div id="bdf-budgets" class="bd-checkbox-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meetings Tab -->
+    <div class="tb-panel" id="bdtab-meetings">
+      <div style="padding-top:1.2rem" id="bd-meetings-list"></div>
+    </div>
+  </div>
 </div>
 
 <!-- ░░░░ PRICE GUIDE ░░░░ -->

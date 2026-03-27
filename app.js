@@ -8,8 +8,8 @@ const PRICES={res:[{area:"Vesu",avg:6500,range:"₹5,200–7,800",trend:"↑ +8.
 
 /* ── BROKER DATA ───────────────────────── */
 const BROKERS=[
-  {id:1,name:"Rajesh Kumar Patel",init:"RK",bg:"#dce8d8",fg:"#2d6b3a",title:"Senior Property Consultant",exp:12,deals:180,rating:4.9,reviews:47,rank:1,areas:["Vesu","Adajan","Pal","City Light"],types:["Residential Flat","Villa / Bungalow","Plot / Land"],budgets:["₹30L – ₹60L","₹60L – ₹1Cr","₹1Cr – ₹2Cr","₹2Cr+"],badge:"top",badgeText:"Top Rated",lang:"Gujarati, Hindi",response:"~1 hr",verified:true,about:"With 12+ years in Surat's real estate market, I specialize in premium residential properties across Vesu and Adajan. My focus is understanding your exact need before showing any property — quality over quantity.",clientReviews:[{name:"Mihir Desai",stars:5,date:"Jan 2025",text:"Rajesh bhai found us our dream flat in Vesu within 3 weeks. Honest about prices, never pushed us."},{name:"Neha Joshi",stars:5,date:"Dec 2024",text:"Very professional. Arranged 4 site visits in one day. Got a great deal on a 3BHK in Adajan."},{name:"Pratik Shah",stars:5,date:"Nov 2024",text:"Best broker in Surat. Knows every builder personally. Completely transparent."}]},
-  {id:2,name:"Priya Shah",init:"PS",bg:"#d8e0f0",fg:"#2a4a90",title:"Residential Property Specialist",exp:8,deals:110,rating:4.8,reviews:38,rank:2,areas:["Pal","City Light","Athwa","Dumas"],types:["Residential Flat","Villa / Bungalow","Rental"],budgets:["₹60L – ₹1Cr","₹1Cr – ₹2Cr","₹2Cr+"],badge:"verified",badgeText:"Verified Pro",lang:"Gujarati, Hindi, English",response:"~2 hrs",verified:true,about:"8 years specializing in premium residential and rental properties in South Surat. Deep connections with builders in Pal and City Light.",clientReviews:[{name:"Ravi Mehta",stars:5,date:"Feb 2025",text:"Found us a villa in Dumas exactly as described. Very responsive."},{name:"Sunita Patel",stars:5,date:"Jan 2025",text:"Rented a 2BHK in Pal within 10 days."},{name:"Ajay Kapoor",stars:4,date:"Dec 2024",text:"Knowledgeable and professional. Gets results."}]},
+  {id:1,name:"Rajesh Kumar Patel",init:"RK",bg:"#dce8d8",fg:"#2d6b3a",title:"Senior Property Consultant",exp:12,deals:180,rating:4.9,reviews:47,rank:1,mobile:"9876543210",areas:["Vesu","Adajan","Pal","City Light"],types:["Residential Flat","Villa / Bungalow","Plot / Land"],budgets:["₹30L – ₹60L","₹60L – ₹1Cr","₹1Cr – ₹2Cr","₹2Cr+"],badge:"top",badgeText:"Top Rated",lang:"Gujarati, Hindi",response:"~1 hr",verified:true,about:"With 12+ years in Surat's real estate market, I specialize in premium residential properties across Vesu and Adajan. My focus is understanding your exact need before showing any property — quality over quantity.",clientReviews:[{name:"Mihir Desai",stars:5,date:"Jan 2025",text:"Rajesh bhai found us our dream flat in Vesu within 3 weeks. Honest about prices, never pushed us."},{name:"Neha Joshi",stars:5,date:"Dec 2024",text:"Very professional. Arranged 4 site visits in one day. Got a great deal on a 3BHK in Adajan."},{name:"Pratik Shah",stars:5,date:"Nov 2024",text:"Best broker in Surat. Knows every builder personally. Completely transparent."}]},
+  {id:2,name:"Priya Shah",init:"PS",bg:"#d8e0f0",fg:"#2a4a90",title:"Residential Property Specialist",exp:8,deals:110,rating:4.8,reviews:38,rank:2,mobile:"9876543211",areas:["Pal","City Light","Athwa","Dumas"],types:["Residential Flat","Villa / Bungalow","Rental"],budgets:["₹60L – ₹1Cr","₹1Cr – ₹2Cr","₹2Cr+"],badge:"verified",badgeText:"Verified Pro",lang:"Gujarati, Hindi, English",response:"~2 hrs",verified:true,about:"8 years specializing in premium residential and rental properties in South Surat. Deep connections with builders in Pal and City Light.",clientReviews:[{name:"Ravi Mehta",stars:5,date:"Feb 2025",text:"Found us a villa in Dumas exactly as described. Very responsive."},{name:"Sunita Patel",stars:5,date:"Jan 2025",text:"Rented a 2BHK in Pal within 10 days."},{name:"Ajay Kapoor",stars:4,date:"Dec 2024",text:"Knowledgeable and professional. Gets results."}]},
   {id:3,name:"Arjun Mehta",init:"AM",bg:"#f0dcd8",fg:"#8a3020",title:"Property Consultant",exp:6,deals:72,rating:4.6,reviews:24,rank:3,areas:["Althan","Piplod","Vesu"],types:["Residential Flat","Plot / Land","Commercial"],budgets:["₹30L – ₹60L","₹60L – ₹1Cr","₹1Cr – ₹2Cr"],badge:"new",badgeText:"Rising Star",lang:"Gujarati, Hindi",response:"~3 hrs",verified:true,about:"6 years focused in Althan and Piplod. Transparent approach. Specializes in under-construction and resale flats.",clientReviews:[{name:"Deepak Trivedi",stars:5,date:"Feb 2025",text:"Knows Althan like the back of his hand."},{name:"Kiran Shah",stars:4,date:"Jan 2025",text:"Honest about pros and cons."},{name:"Bhavna Rao",stars:5,date:"Dec 2024",text:"Very helpful for first-time buyers."}]},
   {id:4,name:"Suresh Agarwal",init:"SA",bg:"#f0ead8",fg:"#7a5a10",title:"Commercial Property Expert",exp:14,deals:95,rating:4.7,reviews:31,rank:4,areas:["Katargam","Udhna","Sachin","Athwa"],types:["Commercial","Plot / Land"],budgets:["₹30L – ₹60L","₹60L – ₹1Cr","₹1Cr – ₹2Cr","₹2Cr+"],badge:"verified",badgeText:"Verified Pro",lang:"Gujarati, Hindi, Marwari",response:"~4 hrs",verified:true,about:"14 years in commercial real estate. Strong GIDC and commercial developer network.",clientReviews:[{name:"Manish Agarwal",stars:5,date:"Jan 2025",text:"Best for commercial property."},{name:"Ramesh Gupta",stars:5,date:"Nov 2024",text:"Excellent negotiation skills."},{name:"Nilesh Modi",stars:4,date:"Oct 2024",text:"Very experienced."}]},
   {id:5,name:"Kavita Joshi",init:"KJ",bg:"#e0d8f0",fg:"#4a2a90",title:"Residential & Rental Specialist",exp:5,deals:88,rating:4.7,reviews:29,rank:5,areas:["Adajan","Pal","City Light","Piplod"],types:["Residential Flat","Rental"],budgets:["Below ₹30L","₹30L – ₹60L","₹60L – ₹1Cr"],badge:"new",badgeText:"Rising Star",lang:"Gujarati, Hindi, English",response:"~1 hr",verified:true,about:"5 years focused on affordable residential and rentals in West Surat. Especially helpful for first-time buyers.",clientReviews:[{name:"Viral Patel",stars:5,date:"Feb 2025",text:"Helped us rent within tight budget."},{name:"Sonal Mehta",stars:5,date:"Jan 2025",text:"Trustworthy broker!"},{name:"Jigar Shah",stars:4,date:"Dec 2024",text:"Knows Adajan very well."}]},
@@ -60,11 +60,13 @@ const DB={
   get saved(){return JSON.parse(localStorage.getItem('mb_saved')||'[]')},
   get recent(){return JSON.parse(localStorage.getItem('mb_recent')||'[]')},
   get session(){return JSON.parse(localStorage.getItem('mb_session')||'null')},
+  get brokerProfiles(){return JSON.parse(localStorage.getItem('mb_broker_profiles')||'[]')},
   save(d){
     if(d.users)localStorage.setItem('mb_users',JSON.stringify(d.users));
     if(d.meetings)localStorage.setItem('mb_meetings',JSON.stringify(d.meetings));
     if(d.saved)localStorage.setItem('mb_saved',JSON.stringify(d.saved));
     if(d.recent!==undefined)localStorage.setItem('mb_recent',JSON.stringify(d.recent));
+    if(d.brokerProfiles!==undefined)localStorage.setItem('mb_broker_profiles',JSON.stringify(d.brokerProfiles));
   },
   setSession(u){localStorage.setItem('mb_session',JSON.stringify(u))},
   clearSession(){localStorage.removeItem('mb_session')}
@@ -97,6 +99,7 @@ function showPage(page,param){
   if(page==='price-guide')renderPriceGuide();
   if(page==='my-profile')loadMyProfile();
   if(page==='my-meetings')loadMyMeetings();
+  if(page==='broker-dash')loadBrokerDash();
   updateNav();updateBackButton();
 }
 
@@ -111,12 +114,13 @@ function goBack(){
   if(prev.page==='profile'&&prev.param)renderProfile(prev.param);
   if(prev.page==='my-profile')loadMyProfile();
   if(prev.page==='my-meetings')loadMyMeetings();
+  if(prev.page==='broker-dash')loadBrokerDash();
   updateNav();updateBackButton();
 }
 
 function updateBackButton(){
   let btn=document.getElementById('floating-back-btn');
-  const noBack=['landing','auth','wizard'];
+  const noBack=['landing','auth','wizard','broker-dash'];
   const show=pageHistory.length>0&&!noBack.includes(currentPage?.page);
   if(show){
     if(!btn){btn=document.createElement('button');btn.id='floating-back-btn';btn.innerHTML='← Back';btn.onclick=goBack;document.body.appendChild(btn);}
@@ -131,6 +135,7 @@ function requireLogin(page){
 
 function goHome(){
   if(!DB.session)return showPage('landing');
+  if(DB.session.role==='broker')return showPage('broker-dash');
   showPage('listing');
 }
 
@@ -147,12 +152,26 @@ function updateNav(){
   if(!na)return;
   if(DB.session){
     const name=DB.session.name?.split(' ')[0]||'User';
+    const isBroker=DB.session.role==='broker';
     na.innerHTML=`<div class="user-chip" onclick="toggleDropdown(event)"><div class="user-chip-av">${name[0].toUpperCase()}</div><span class="user-chip-name">${name}</span><span class="user-chip-arrow">▾</span></div>`;
-    const pdN=document.getElementById('pdName'),pdA=document.getElementById('pdAvatar');
+    const pdN=document.getElementById('pdName'),pdA=document.getElementById('pdAvatar'),pdR=document.getElementById('pdRole');
     if(pdN)pdN.textContent=DB.session.name||'User';
     if(pdA)pdA.textContent=name[0].toUpperCase();
+    if(pdR)pdR.textContent=isBroker?'Broker':'Member';
+    const pdBrokerItem=document.getElementById('pdBrokerItem');
+    if(pdBrokerItem)pdBrokerItem.style.display=isBroker?'flex':'none';
+    const pdProfileItem=document.getElementById('pdProfileItem');
+    if(pdProfileItem)pdProfileItem.style.display=isBroker?'none':'flex';
+    const pdMeetingsItem=document.getElementById('pdMeetingsItem');
+    if(pdMeetingsItem)pdMeetingsItem.style.display=isBroker?'none':'flex';
     const mma=document.getElementById('mobileMenuAuth');
-    if(mma)mma.innerHTML=`<button class="nb nb-ghost" onclick="showPage('my-profile');closeMobileMenu()">My Profile</button><button class="nb nb-ghost" onclick="showPage('my-meetings');closeMobileMenu()">My Meetings</button><button class="nb nb-ghost" onclick="doLogout()">Logout</button>`;
+    if(mma){
+      if(isBroker){
+        mma.innerHTML=`<button class="nb nb-ghost" onclick="showPage('broker-dash');closeMobileMenu()">Broker Dashboard</button><button class="nb nb-ghost" onclick="doLogout()">Logout</button>`;
+      } else {
+        mma.innerHTML=`<button class="nb nb-ghost" onclick="showPage('my-profile');closeMobileMenu()">My Profile</button><button class="nb nb-ghost" onclick="showPage('my-meetings');closeMobileMenu()">My Meetings</button><button class="nb nb-ghost" onclick="doLogout()">Logout</button>`;
+      }
+    }
   }else{
     na.innerHTML=`<button class="nb nb-ghost" onclick="showPage('auth','login')">Login</button><button class="nb nb-red" onclick="startWizard()">Find My Broker</button>`;
     const mma=document.getElementById('mobileMenuAuth');
@@ -208,10 +227,27 @@ function verifyOtp(){
     u={id:Date.now(),name:'User',mobile:otpMobile,email:'',intent:'Buy',role:'user',savedBrokers:[],joinedAt:new Date().toLocaleDateString('en-IN')};
     users.push(u);DB.save({users});
   }
+  // If the mobile matches a listed broker, upgrade to broker role and seed profile
+  const matchedBroker=BROKERS.find(b=>b.mobile===otpMobile);
+  if(matchedBroker&&u.role!=='broker'){
+    u={...u,role:'broker'};
+    users[users.findIndex(x=>x.id===u.id)]=u;
+    DB.save({users});
+  }
+  if(u.role==='broker'){
+    const profiles=DB.brokerProfiles;
+    if(!profiles.find(p=>p.userId===u.id)){
+      const src=matchedBroker||defaultBrokerProfile(u.name,u.mobile);
+      profiles.push({...src,userId:u.id});
+      DB.save({brokerProfiles:profiles});
+    }
+  }
   DB.setSession(u);
   toast(`Welcome back, ${u.name.split(' ')[0]}!`);
   updateNav();
-  if(matchFilters){showPage('listing');}else{goHome();}
+  if(u.role==='broker'){showPage('broker-dash');}
+  else if(matchFilters){showPage('listing');}
+  else{goHome();}
   resetOtpForm();
 }
 
@@ -247,25 +283,71 @@ function verifyRegOtp(){
   resetOtpForm();
 }
 
-function doBrokerRegister(){
+function sendBregOtp(){
   const name=document.getElementById('breg-name').value.trim();
   const mobile=document.getElementById('breg-mobile').value.trim();
-  if(!name||!mobile)return authMsg('All fields required','error');
-  authMsg('Application submitted! Our team will review within 24 hours. ✅','ok');
+  if(!name)return authMsg('Name is required','error');
+  if(!/^[6-9]\d{9}$/.test(mobile))return authMsg('Enter valid 10-digit mobile','error');
+  generatedOtp=String(Math.floor(1000+Math.random()*9000));
+  otpMobile=mobile;
+  document.getElementById('breg-otp-section').classList.remove('hidden');
+  document.getElementById('breg-send-section').classList.add('hidden');
+  authMsg(`OTP sent: <strong>${generatedOtp}</strong> (demo mode)`,'ok');
+  setTimeout(()=>document.querySelector('.breg-otp')?.focus(),100);
+}
+
+function verifyBregOtp(){
+  const inputs=document.querySelectorAll('.breg-otp');
+  const otp=Array.from(inputs).map(i=>i.value).join('');
+  if(otp!==generatedOtp)return authMsg('Invalid OTP','error');
+  const name=document.getElementById('breg-name').value.trim();
+  const mobile=otpMobile;
+  const email=document.getElementById('breg-email').value.trim();
+  const exp=parseInt(document.getElementById('breg-exp').value)||0;
+  const areas=document.getElementById('breg-areas').value.trim();
+  const users=DB.users;
+  let u=users.find(u=>u.mobile===mobile);
+  if(u){
+    u={...u,role:'broker',email:email||u.email};
+    users[users.findIndex(x=>x.id===u.id)]=u;
+  } else {
+    u={id:Date.now(),name,mobile,email,role:'broker',joinedAt:new Date().toLocaleDateString('en-IN')};
+    users.push(u);
+  }
+  const profiles=DB.brokerProfiles;
+  if(!profiles.find(p=>p.userId===u.id)){
+    const base=defaultBrokerProfile(name,mobile);
+    const palette=[['#dce8d8','#2d6b3a'],['#d8e0f0','#2a4a90'],['#f0dcd8','#8a3020'],['#f0ead8','#7a5a10'],['#e0d8f0','#4a2a90'],['#d8f0e4','#1a5a3a']];
+    const ci=users.length%palette.length;
+    profiles.push({
+      ...base, userId:u.id, email,
+      bg:palette[ci][0], fg:palette[ci][1],
+      exp, areas:areas?areas.split(',').map(a=>a.trim()):[]
+    });
+    DB.save({brokerProfiles:profiles});
+  }
+  DB.save({users});
+  DB.setSession(u);
+  toast(`Welcome to MyBroker, ${name.split(' ')[0]}! Set up your broker profile.`);
+  updateNav();
+  showPage('broker-dash');
+  resetOtpForm();
 }
 
 function resetOtpForm(){
   document.querySelectorAll('.otp-input').forEach(i=>i.value='');
   const os=document.getElementById('otp-section'),ss=document.getElementById('send-otp-section');
   const ros=document.getElementById('reg-otp-section'),rss=document.getElementById('reg-send-section');
+  const bos=document.getElementById('breg-otp-section'),bss=document.getElementById('breg-send-section');
   if(os)os.classList.add('hidden');if(ss)ss.classList.remove('hidden');
   if(ros)ros.classList.add('hidden');if(rss)rss.classList.remove('hidden');
+  if(bos)bos.classList.add('hidden');if(bss)bss.classList.remove('hidden');
   generatedOtp=null;otpMobile=null;
 }
 
 function otpNext(el,idx,prefix){
   if(el.value.length===1){
-    const cls=prefix==='reg'?'.reg-otp':('#otp-section .otp-input');
+    const cls=prefix==='reg'?'.reg-otp':prefix==='breg'?'.breg-otp':('#otp-section .otp-input');
     const inputs=document.querySelectorAll(cls);
     if(idx<inputs.length-1)inputs[idx+1].focus();
   }
@@ -273,7 +355,7 @@ function otpNext(el,idx,prefix){
 
 function otpBack(e,idx,prefix){
   if(e.key==='Backspace'&&!e.target.value){
-    const cls=prefix==='reg'?'.reg-otp':('#otp-section .otp-input');
+    const cls=prefix==='reg'?'.reg-otp':prefix==='breg'?'.breg-otp':('#otp-section .otp-input');
     const inputs=document.querySelectorAll(cls);
     if(idx>0)inputs[idx-1].focus();
   }
@@ -726,6 +808,146 @@ function loadMyMeetings(){
     <div class="mc-detail"><strong>Requirement:</strong> ${m.req}</div>
     <div class="mc-detail"><strong>Date:</strong> ${m.date} · ${m.time}</div>
     <div class="mc-detail"><strong>Requested:</strong> ${m.at}</div></div>`).join('');
+}
+
+/* ══════════════════════════════════════════
+   BROKER DASHBOARD
+══════════════════════════════════════════ */
+function getBrokerProfile(){
+  const u=DB.session;if(!u)return null;
+  const profiles=DB.brokerProfiles;
+  let p=profiles.find(p=>p.userId===u.id);
+  if(p)return {...p};
+  // Fallback: check if mobile matches a static broker entry
+  const staticBroker=BROKERS.find(b=>b.mobile===u.mobile);
+  return staticBroker?{...staticBroker,userId:u.id}:null;
+}
+
+const ALL_AREAS=['Vesu','Adajan','Pal','Althan','City Light','Athwa','Piplod','Dumas','Katargam','Udhna','Sachin'];
+const ALL_TYPES=['Residential Flat','Villa / Bungalow','Plot / Land','Commercial','Rental'];
+const ALL_BUDGETS=['Below ₹30L','₹30L – ₹60L','₹60L – ₹1Cr','₹1Cr – ₹2Cr','₹2Cr+'];
+
+function defaultBrokerProfile(name,mobile){
+  return {name,mobile,init:name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase(),bg:'#dce8d8',fg:'#2d6b3a',title:'Property Consultant',exp:0,deals:0,rating:0,reviews:0,rank:0,areas:[],types:[],budgets:[],badge:'new',badgeText:'New Broker',lang:'',response:'~24 hrs',verified:false,about:'',trustScore:0};
+}
+
+function loadBrokerDash(){
+  const u=DB.session;
+  if(!u||u.role!=='broker'){showPage('listing');return;}
+  const p=getBrokerProfile();
+  if(!p){showPage('listing');return;}
+  const ts=p.trustScore||calcTrustScore(p);
+  const tc=getTrustColor(ts);
+
+  // Header
+  const av=document.getElementById('bd-avatar'),nm=document.getElementById('bd-name'),ti=document.getElementById('bd-title');
+  if(av){av.textContent=p.init||p.name[0].toUpperCase();av.style.background=p.bg;av.style.color=p.fg;}
+  if(nm)nm.textContent=p.name;
+  if(ti)ti.textContent=p.title||'Property Consultant';
+  const bdVerified=document.getElementById('bd-verified');
+  if(bdVerified)bdVerified.style.display=p.verified?'inline-flex':'none';
+  const bdTrust=document.getElementById('bd-trust-score');
+  if(bdTrust){bdTrust.textContent=ts;bdTrust.style.color=tc;}
+  const bdTrustLabel=document.getElementById('bd-trust-label');
+  if(bdTrustLabel){bdTrustLabel.textContent=getTrustLabel(ts);bdTrustLabel.style.color=tc;}
+
+  // Populate edit form
+  const fields={
+    'bdf-name':p.name,'bdf-title':p.title||'','bdf-exp':p.exp||0,
+    'bdf-lang':p.lang||'','bdf-response':p.response||'','bdf-about':p.about||''
+  };
+  Object.entries(fields).forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.value=val;});
+
+  // Area checkboxes
+  const areasWrap=document.getElementById('bdf-areas');
+  if(areasWrap){
+    areasWrap.innerHTML=ALL_AREAS.map(a=>`<label class="bd-checkbox-label"><input type="checkbox" value="${a}"${(p.areas||[]).includes(a)?' checked':''}> ${a}</label>`).join('');
+  }
+
+  // Type checkboxes
+  const typesWrap=document.getElementById('bdf-types');
+  if(typesWrap){
+    typesWrap.innerHTML=ALL_TYPES.map(t=>`<label class="bd-checkbox-label"><input type="checkbox" value="${t}"${(p.types||[]).includes(t)?' checked':''}> ${t}</label>`).join('');
+  }
+
+  // Budget checkboxes
+  const budgetsWrap=document.getElementById('bdf-budgets');
+  if(budgetsWrap){
+    budgetsWrap.innerHTML=ALL_BUDGETS.map(b=>`<label class="bd-checkbox-label"><input type="checkbox" value="${b}"${(p.budgets||[]).includes(b)?' checked':''}> ${b}</label>`).join('');
+  }
+
+  // Load incoming meetings
+  loadBrokerMeetings(p);
+}
+
+function saveBrokerProfile(){
+  const u=DB.session;if(!u)return;
+  const name=document.getElementById('bdf-name').value.trim();
+  if(!name)return brokerDashMsg('Name is required','error');
+  const title=document.getElementById('bdf-title').value.trim();
+  const exp=parseInt(document.getElementById('bdf-exp').value)||0;
+  const lang=document.getElementById('bdf-lang').value.trim();
+  const response=document.getElementById('bdf-response').value.trim();
+  const about=document.getElementById('bdf-about').value.trim();
+  const areas=Array.from(document.querySelectorAll('#bdf-areas input:checked')).map(i=>i.value);
+  const types=Array.from(document.querySelectorAll('#bdf-types input:checked')).map(i=>i.value);
+  const budgets=Array.from(document.querySelectorAll('#bdf-budgets input:checked')).map(i=>i.value);
+
+  const profiles=DB.brokerProfiles;
+  let idx=profiles.findIndex(p=>p.userId===u.id);
+  if(idx===-1){
+    const existing=getBrokerProfile()||{};
+    profiles.push({...existing,userId:u.id});
+    idx=profiles.length-1;
+  }
+  const init=name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  profiles[idx]={...profiles[idx],name,title,exp,lang,response,about,areas,types,budgets,init};
+  DB.save({brokerProfiles:profiles});
+
+  // Update user name if changed
+  const users=DB.users;
+  const ui=users.findIndex(x=>x.id===u.id);
+  if(ui>-1){users[ui]={...users[ui],name};DB.save({users});DB.setSession(users[ui]);}
+
+  // Refresh header
+  const bdN=document.getElementById('bd-name'),bdAv=document.getElementById('bd-avatar'),bdTi=document.getElementById('bd-title');
+  if(bdN)bdN.textContent=name;
+  if(bdAv){bdAv.textContent=init;}
+  if(bdTi)bdTi.textContent=title||'Property Consultant';
+  updateNav();
+  brokerDashMsg('Profile saved! ✅','ok');
+}
+
+function brokerDashMsg(msg,type){
+  const el=document.getElementById('bd-edit-msg');
+  if(el)el.innerHTML=`<div class="msg-${type}" style="margin-bottom:0.8rem">${msg}</div>`;
+}
+
+function loadBrokerMeetings(p){
+  const c=document.getElementById('bd-meetings-list');if(!c)return;
+  // Match meetings by broker name or by brokerId matching userId
+  const allMeetings=DB.meetings;
+  const brokerName=(p.name||'').toLowerCase();
+  const meetings=allMeetings.filter(m=>{
+    if(m.brokerId&&m.brokerId===p.userId)return true;
+    // Also match by broker name for static BROKERS data
+    return (m.brokerName||'').toLowerCase()===brokerName;
+  });
+  if(!meetings.length){
+    c.innerHTML=`<div class="empty-state"><svg class="ico-lg" style="color:var(--muted)"><use href="#ico-calendar"/></svg><h3 style="margin:.5rem 0">No meeting requests yet</h3><p style="color:var(--muted);font-size:.85rem">When users request a meeting with you, they'll appear here.</p></div>`;
+    return;
+  }
+  c.innerHTML=meetings.slice().reverse().map(m=>`
+    <div class="meeting-card"><div class="mc-head"><div class="mc-av" style="background:#e2e6f0;color:#1a1a2e">${(m.userName||'U')[0].toUpperCase()}</div><div style="flex:1"><div class="mc-broker-name">${m.userName||'Client'}</div><div class="mc-broker-title">${m.userMobile||''}</div></div><span class="mc-status status-${m.status}">${m.status}</span></div>
+    <div class="mc-detail"><strong>Requirement:</strong> ${m.req}</div>
+    <div class="mc-detail"><strong>Date:</strong> ${m.date} · ${m.time}</div>
+    <div class="mc-detail"><strong>Requested:</strong> ${m.at}</div></div>`).join('');
+}
+
+function switchBrokerTab(name,el){
+  el.closest('.tab-bar').querySelectorAll('.tb-tab').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  ['edit','meetings'].forEach(n=>{const p=document.getElementById('bdtab-'+n);if(p)p.classList.toggle('on',n===name);});
 }
 
 /* ══════════════════════════════════════════
